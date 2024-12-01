@@ -4,7 +4,7 @@ fn main() {
     let input = std::fs::read_to_string("day02/input.txt").unwrap();
 
     let (p1, presents) = puzzle1(&input);
-    let p2 = puzzle2(&input, presents);
+    let p2 = puzzle2(presents);
     println!("P1: {p1}\nP2: {:?}", p2);
 }
 
@@ -32,7 +32,7 @@ fn puzzle1(input: &str) -> (u32, Vec<(u8, u8, u8)>) {
     (paper, presents)
 }
 
-fn puzzle2(input: &str, presents: Vec<(u8, u8, u8)>) -> u32 {
+fn puzzle2(presents: Vec<(u8, u8, u8)>) -> u32 {
     let mut ribbon = 0;
     for present in presents {
         let a = present.0 as u32;
